@@ -1,0 +1,48 @@
+Create and activate virtual Environments for this   application
+
+conda create -n FLASK_REACT_YOUTUBE_V2
+conda activate FLASK_REACT_YOUTUBE_V
+
+install dependencies in virtual environment for this application
+pip install flask flask_restx flask_jwt_extended
+pip install python_decouple
+pip install  Werkzeug==2.1.2
+pip install  Flask==2.1.2
+pip install flask-sqlalchemy==2.5.1
+/*
+Generate secrets
+>>> import secrets
+>>> secrets.token_hex(12)
+*/
+/*
+Create sqlite Database
+inside backend folder
+export FLASK_APP=main.py
+flask shell
+> db.create_all()   //this will create database inside it
+*/
+>flask db init
+this will create migrations repository inside backend folder
+> flask db migrate -m "added user table "
+> flask db upgrade   ///this will upgrade using latest version
+pip install  flask_migrate
+pip install flask-cors   ///this will route api request from localhost:5000 to localhost:3000
+
+
+
+
+
+
+frontend setup
+go to base folder -> C:\Yogesh\Hadoop\Python\Flask_React_Youtube_V2>
+
+
+> npx create-react-app client
+go to base folder -> C:\Yogesh\Hadoop\Python\Flask_React_Youtube_V2\client
+npm start   //this will start frontend server
+
+to route call from frontend server to backend server,add below entry in package.json
+"proxy": "http://localhost:5000",
+
+> npm install react-router-dom
+> npm install react-bootstrap bootstrap
